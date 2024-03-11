@@ -28,7 +28,7 @@ jobs:
              php artisan key:generate
 
       - name: Restart PHP Service
-        run:  sudo service school-dev restart     
+        run:  sudo service school restart     
         
       - name: Restart Nginx Service
         run:  sudo service nginx restart
