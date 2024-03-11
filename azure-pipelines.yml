@@ -1,0 +1,34 @@
+trigger:
+- dev
+
+jobs:
+- job: build
+  pool:
+    name: 'Default' 
+
+  steps:
+  # - script: |
+  #     sudo rm -rf /home/ubuntu/actions-runner/_work/school-management/school-management/dev
+  #   displayName: 'Cleaning Up files'
+
+  - checkout: self
+    path: 'dev'
+    displayName: 'Clone repositories'
+
+  - script: |
+      cd dev
+      cp .env.dev .env
+      composer update
+      sudo chmod -R 777 storage
+      sudo chmod -R 777 bootstrap/cache
+      sudo chmod -R 777 /home/ubuntu/myagent
+      php artisan key:generate
+    displayName: 'Composer Update'
+
+  - script: |
+      sudo service school-dev restart
+    displayName: 'Restart PHP Service'
+
+  - script: |
+      sudo service nginx restart
+    displayName: 'Restart Nginx Service'
