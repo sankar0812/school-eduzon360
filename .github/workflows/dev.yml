@@ -1,0 +1,34 @@
+name: Development
+
+on:
+  push:
+    branches: dev
+    
+jobs:
+  build:
+    runs-on: aws-devops
+
+    steps:
+      # - name: Cleaning Up files
+      #   run: sudo rm -rf /home/ubuntu/actions-runner/_work/school-management/school-management/dev
+      
+      - name: Clone repositories
+        uses: actions/checkout@v3
+        with:
+          path: 'dev'
+
+      - name: Composer Update
+        run: |
+             cd dev
+             cp .env.dev .env
+             composer update
+             sudo chmod -R 777 storage
+             sudo chmod -R 777 bootstrap/cache
+             sudo chmod -R 777 /home/ubuntu/actions-runner
+             php artisan key:generate
+
+      - name: Restart PHP Service
+        run:  sudo service school-dev restart     
+        
+      - name: Restart Nginx Service
+        run:  sudo service nginx restart
