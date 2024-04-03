@@ -6,7 +6,7 @@ on:
     
 jobs:
   build:
-    runs-on: aws-devops
+    runs-on: aws-dev
 
     steps:
       # - name: Cleaning Up files
