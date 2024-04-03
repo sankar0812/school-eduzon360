@@ -1,10 +1,10 @@
 pipeline {
     agent { label 'dev' }
 
-    tools {
-        // Use the Git tool configured in Jenkins
-        git 'Git'
-    }
+    // tools {
+    //     // Use the Git tool configured in Jenkins
+    //     git 'Git'
+    // }
 
     stages {
         // stage('Cleaning Up Files') {
@@ -18,7 +18,7 @@ pipeline {
         stage('Clone Repositories') {
             steps {
                 script {
-                    git branch: 'dev', url: 'https://github.com/actions/checkout'
+                    git branch: 'main', url: 'https://github.com/sankar0812/school-eduzon360.git'
                 }
             }
         }
