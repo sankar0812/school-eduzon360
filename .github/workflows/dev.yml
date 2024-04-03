@@ -6,8 +6,8 @@ on:
     
 jobs:
   build:
-    runs-on: ideaux-dev-vps
-
+    runs-on: aws-dev
+    
     steps:
       # - name: Cleaning Up files
       #   run: sudo rm -rf /home/ubuntu/actions-runner/_work/school-management/school-management/dev
