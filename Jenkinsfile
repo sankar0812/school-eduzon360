@@ -15,13 +15,13 @@ pipeline {
         //     }
         // }
         
-        stage('Clone Repositories') {
-            steps {
-                script {
-                    git branch: 'main', url: 'https://github.com/sankar0812/school-eduzon360.git'
-                }
-            }
-        }
+        // stage('Clone Repositories') {
+        //     steps {
+        //         script {
+        //             git branch: 'main', url: 'https://github.com/sankar0812/school-eduzon360.git'
+        //         }
+        //     }
+        // }
         
         stage('Composer Update') {
             steps {
