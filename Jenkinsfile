@@ -1,10 +1,10 @@
 pipeline {
     agent { label 'dev' }
 
-    // tools {
-    //     // Use the Git tool configured in Jenkins
-    //     git 'Git'
-    // }
+    tools {
+        // Use the Git tool configured in Jenkins
+        git 'Git'
+    }
 
     stages {
         // stage('Cleaning Up Files') {
