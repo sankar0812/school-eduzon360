@@ -7,7 +7,7 @@ on:
 jobs:
   build:
     runs-on: aws-dev
-
+    
     steps:
       # - name: Cleaning Up files
       #   run: sudo rm -rf /home/ubuntu/actions-runner/_work/school-management/school-management/dev
@@ -28,7 +28,7 @@ jobs:
              php artisan key:generate
 
       - name: Restart PHP Service
-        run:  sudo service school-dev restart     
+        run:  sudo service school restart     
         
       - name: Restart Nginx Service
         run:  sudo service nginx restart
