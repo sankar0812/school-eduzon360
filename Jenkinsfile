@@ -3,7 +3,7 @@ pipeline {
 
     tools {
         // Use the Git tool configured in Jenkins
-        git 'Git'
+        git 'git'
     }
 
     stages {
