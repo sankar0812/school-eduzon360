@@ -9,8 +9,8 @@ jobs:
     runs-on: aws-dev
     
     steps:
-      # - name: Cleaning Up files
-      #   run: sudo rm -rf /home/ubuntu/actions-runner/_work/school-management/school-management/dev
+      - name: Cleaning Up files
+        run: sudo rm -rf /home/ubuntu/actions-runner/_work/school-eduzon360/school-eduzon360/dev
       
       - name: Clone repositories
         uses: actions/checkout@v3
@@ -28,7 +28,7 @@ jobs:
              php artisan key:generate
 
       - name: Restart PHP Service
-        run:  sudo service school restart     
+        run:  sudo service school-dev restart     
         
       - name: Restart Nginx Service
         run:  sudo service nginx restart
