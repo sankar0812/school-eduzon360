@@ -10,7 +10,7 @@ jobs:
     
     steps:
       - name: Cleaning Up files
-        run: sudo rm -rf /home/ubuntu/actions-runner/_work/school-eduzon360/school-eduzon360/dev
+        run: sudo rm -rf /home/ubuntu/actions-runner/_work/school-eduzon360/school-eduzon360/dev/
       
       - name: Clone repositories
         uses: actions/checkout@v3
